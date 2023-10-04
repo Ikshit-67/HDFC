@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="./styles.css">
+   
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <img class="logo-img" src="../images/brand-logo.jpg" alt="">
+            <p class="main-heading">Chatbot for Affordable Housing</p>
+        </div>
+
+        <div class="main">
+            <div class="chat-container">
+                    <div id="chat-messages">
+                    </div>
+
+                    <div id="loading" class="loading">
+                        Typing...
+                    </div>
+
+                    <div class="input-area">
+                        <input class="input-field" placeholder="Hello! Type your query:" type="text" id="user-input">
+                        <button class="submit button" type="submit" onclick="sendMessage()">Send</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById("chat-messages");
+        const userInput = document.getElementById("user-input");
+        const loading = document.getElementById("loading");
+
+        function showLoading() {
+            loading.style.display = "block";
+        }
+
+        function hideLoading() {
+            loading.style.display = "none";
+        }
+
+        function appendMessage(message, isUserMessage = false) {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = "message" + (isUserMessage ? " user-message" : "");
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const userMessage = userInput.value;
+            appendMessage(userMessage, true);
+            userInput.value = "";
+
+            showLoading();
+
+            fetch("http://127.0.0.1:8000/query", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ query: userMessage })
+            })
+                .then(response => response.text())
+                .then(result => {
+                    appendMessage(result);
+                    hideLoading();
+                })
+                .catch(error => {
+                    console.error("Error sending message:", error);
+                    hideLoading();
+                });
+        }
+
+        userInput.focus();
+    </script>
+</body>
+
+</html>
