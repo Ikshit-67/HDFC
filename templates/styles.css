@@ -13,6 +13,7 @@
     flex-direction: column;
     height: 100vh;
       background-color: white;
+     
     /* gap: 50px; */
     
 }
@@ -30,6 +31,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid rgb(202, 146, 146);
     
 }
 
@@ -39,6 +41,7 @@
 }
 
 .main{
+     /* border: 1px solid gray; */
     height: calc(100vh - 200px);
     margin: 30px;
     background-color:white;
@@ -90,9 +93,20 @@
 }
 
 .input-area button {
-    margin-left: 20px;
-    padding: 10px;
-    border-radius: 10px;
+    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    width: 2em;
+     height: 2em;
+   border: none !important;
+     border: none;
+    background-color:#f8888e  !important;
+    color: white;
+    border-radius: 50%;
+    /* padding: 10px 10px 10px 14px; */
+    /* padding: 0.5em; */
 }
 
 .message{
