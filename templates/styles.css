@@ -12,6 +12,7 @@
     height: 100vh;
     flex-direction: column;
     height: 100vh;
+      background-color: white;
     /* gap: 50px; */
     
 }
@@ -40,7 +41,7 @@
 .main{
     height: calc(100vh - 200px);
     margin: 30px;
-    background-color: #FCE9EA;
+    background-color:white;
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -70,7 +71,7 @@
 
 .input-area{
     width: 100%;
-    background-color: #FCE9EA;
+    background-color: white;
     height: 7vh;
     display: flex;
     align-items: center;
@@ -97,11 +98,14 @@
 .message{
     border: 1px solid blue;
     padding: 10px;
+    background-color: #FCE9EA;
+  
     margin-bottom: 10px;
 }
 
 .user-message{
     border: 1px solid red;
     padding: 10px;
+  background-color: white;
     margin-bottom: 10px;
 }
