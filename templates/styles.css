@@ -96,16 +96,17 @@
 }
 
 .message{
-    border: 1px solid blue;
-    padding: 10px;
-    background-color: #FCE9EA;
+    /* border: 1px solid blue; */
+    padding: 20px;
+    background-color: rgba(252, 233, 234, 0.5);
+    border-radius: 10px;
   
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .user-message{
-    border: 1px solid red;
-    padding: 10px;
+    /* border: 1px solid red; */
+    padding: 20px;
   background-color: white;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
