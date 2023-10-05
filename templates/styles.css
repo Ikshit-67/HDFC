@@ -125,20 +125,36 @@
 
 .message{
     /* border: 1px solid blue; */
-    padding: 20px;
+   margin-top: 1.3em;
     background-color: rgba(252, 233, 234, 0.5);
-    border-radius: 10px;
-  
+     display: flex;
+ 
+    align-items: center;
+  padding: 20px;
+
     /* margin-bottom: 10px; */
 }
+.message::before{
+    content: url("../images/hdfc\ 1.svg");;
+    margin-right: 15px;
+
+
+    
+}
+
 
 .user-message{
     /* border: 1px solid red; */
-    padding: 20px;
+    display: flex;
+ 
+    align-items: center;
+  
   background-color: white;
     /* margin-bottom: 10px; */
 }
 .user-message::before{
-    content:"⇱";
-    margin-right: 10px;
+    content: url("../images/user\ 1.svg");;
+    margin-right: 15px;
+
+    
 }
