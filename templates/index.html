@@ -17,10 +17,11 @@
             <div>
 
           
-            <p class="main-heading">Chatbot for Affordable Housing</p>
+            <p class="main-heading">Affordable Housing AI Assistant</p>
             <p class="powered">Powered by HDFC Capital</p>
               </div>
         </div>
+
 
         <div class="main">
             <div class="chat-container">
@@ -28,7 +29,7 @@
                     </div>
 
                     <div id="loading" class="loading">
-                        Typing...
+                        Generating...
                     </div>
 
                     <div class="input-area">
@@ -61,7 +62,9 @@
         }
 
         function sendMessage() {
+            console.log(userInput);
             const userMessage = userInput.value;
+            const promptMessage = userInput.value ;
             appendMessage(userMessage, true);
             userInput.value = "";
 

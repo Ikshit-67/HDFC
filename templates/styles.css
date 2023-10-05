@@ -139,6 +139,6 @@
     /* margin-bottom: 10px; */
 }
 .user-message::before{
-    content:"⇱";
+    content:"";
     margin-right: 10px;
 }
